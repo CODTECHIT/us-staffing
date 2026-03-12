@@ -39,6 +39,7 @@ export default function IndustriesPage() {
         ]}
         image="/images/industry-tech-detail.jpg"
         imagePosition="right"
+        slug="technology"
       />
 
       <IndustryDetail
@@ -60,6 +61,7 @@ export default function IndustriesPage() {
         image="/images/industry-health-detail.jpg"
         imagePosition="left"
         dark
+        slug="healthcare"
       />
 
       <IndustryDetail
@@ -80,6 +82,7 @@ export default function IndustriesPage() {
         ]}
         image="/images/industry-finance-detail.jpg"
         imagePosition="right"
+        slug="finance"
       />
 
       <IndustryDetail
@@ -101,6 +104,7 @@ export default function IndustriesPage() {
         image="/images/industry-engineering-detail.jpg"
         imagePosition="left"
         dark
+        slug="engineering"
       />
 
       <IndustryDetail
@@ -121,6 +125,7 @@ export default function IndustriesPage() {
         ]}
         image="/images/industry-business-detail.jpg"
         imagePosition="right"
+        slug="business-operations"
       />
 
       <DualCTA />

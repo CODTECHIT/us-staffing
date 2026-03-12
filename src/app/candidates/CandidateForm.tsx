@@ -33,7 +33,7 @@ export default function CandidateForm() {
   };
 
   return (
-    <section className="py-24" style={{ backgroundColor: '#f9fafb' }}>
+    <section id="register" className="py-24" style={{ backgroundColor: '#f9fafb' }}>
       <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-10">
         <ScrollReveal>
           <SectionHeading

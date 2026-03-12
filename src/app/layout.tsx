@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HiringPopup from "@/components/ui/HiringPopup";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,12 +51,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <Navbar />
-        <main>{children}</main>
+        <main className="pb-20 lg:pb-0 overflow-x-hidden">{children}</main>
         <Footer />
         <HiringPopup />
+        <MobileBottomNav />
       </body>
     </html>
   );

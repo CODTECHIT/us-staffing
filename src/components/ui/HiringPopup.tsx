@@ -2,16 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { UilTimes } from '@iconscout/react-unicons';
 
 export default function HiringPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300 && !isDismissed) {
+      // Only show if we are on the home page
+      if (pathname === '/' && window.scrollY > 300 && !isDismissed) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -20,7 +23,7 @@ export default function HiringPopup() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isDismissed]);
+  }, [isDismissed, pathname]);
 
   const handleDismiss = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -33,12 +36,12 @@ export default function HiringPopup() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ x: -400, y: "-50%", opacity: 0 }}
-          animate={{ x: 0, y: "-50%", opacity: 1 }}
-          exit={{ x: -400, y: "-50%", opacity: 0 }}
+          initial={{ x: -100, y: 100, opacity: 0 }}
+          animate={{ x: 0, y: 0, opacity: 1 }}
+          exit={{ x: -100, y: 100, opacity: 0 }}
           transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-          className="fixed left-8 z-50 w-80 sm:w-96 overflow-hidden rounded-2xl shadow-2xl"
-          style={{ height: '200px', top: '50%' }}
+          className="fixed left-0 top-1/2 -translate-y-1/2 z-50 w-[88%] md:w-[32rem] overflow-hidden rounded-r-[2rem] md:rounded-r-[4rem] shadow-[20px_0_60px_rgba(0,0,0,0.5)] border-y border-r border-white/20"
+          style={{ height: '280px' }}
         >
           {/* Background Image */}
           <div
@@ -62,13 +65,13 @@ export default function HiringPopup() {
           </button>
 
           {/* Content */}
-          <div className="relative z-10 h-full flex flex-col items-start justify-center p-8 text-white">
-            <h3 className="text-2xl font-bold mb-1 drop-shadow-md">Looking for Work?</h3>
-            <p className="text-sm text-gray-200 mb-6 drop-shadow-sm font-semibold">We’re Hiring.</p>
+          <div className="relative z-10 h-full flex flex-col items-start justify-center p-10 text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg font-heading">Looking for Work?</h3>
+            <p className="text-base md:text-lg text-teal-300 mb-8 drop-shadow-md font-bold uppercase tracking-[0.2em]">We&apos;re Hiring.</p>
 
             <Link
               href="/jobs"
-              className="inline-block px-6 py-2 rounded-full border-2 border-white text-white font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-[#0B2340] transition-all duration-300 no-underline"
+              className="inline-block px-8 py-3 rounded-full bg-teal-500 text-white font-bold text-sm uppercase tracking-widest hover:bg-teal-400 transform hover:scale-105 transition-all duration-300 no-underline shadow-lg"
             >
               Apply Now!
             </Link>

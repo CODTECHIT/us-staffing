@@ -13,6 +13,7 @@ interface ServiceDetailProps {
   image: string;
   imagePosition?: 'left' | 'right';
   dark?: boolean;
+  slug?: string;
 }
 
 export default function ServiceDetail({
@@ -25,6 +26,7 @@ export default function ServiceDetail({
   image,
   imagePosition = 'right',
   dark = false,
+  slug,
 }: ServiceDetailProps) {
   return (
     <section id={id} className={`py-20 ${dark ? 'bg-navy-900' : 'bg-white'}`}>
@@ -71,9 +73,16 @@ export default function ServiceDetail({
                 ))}
               </ol>
 
-              <Button href="/employers" variant={dark ? 'ghost-white' : 'solid'}>
-                Get Started
-              </Button>
+              <div className="flex flex-wrap gap-4">
+                <Button href="/employers" variant={dark ? 'ghost-white' : 'solid'}>
+                  Get Started
+                </Button>
+                {slug && (
+                  <Button href={`/services/${slug}`} variant="ghost">
+                    View Full Details
+                  </Button>
+                )}
+              </div>
             </ScrollReveal>
           </div>
 

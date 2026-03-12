@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Hero from '@/components/sections/Hero';
-import { UilSearch, UilAngleDown, UilMapPin, UilBell, UilUpload, UilAngleRight } from '@iconscout/react-unicons';
+import { UilSearch, UilAngleDown, UilUpload, UilAngleRight } from '@iconscout/react-unicons';
 
 const allJobs = [
   {
@@ -85,6 +85,7 @@ const jobTypes = ['All Types', 'Full-Time', 'Contract'];
 export default function JobsPage() {
   const [locationFilter, setLocationFilter] = useState('All Locations');
   const [typeFilter, setTypeFilter] = useState('All Types');
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   const filteredJobs = allJobs.filter((job) => {
     const matchLocation = locationFilter === 'All Locations' || job.location === locationFilter;
@@ -101,12 +102,27 @@ export default function JobsPage() {
         compact
       />
 
-      <section className="py-20 bg-[#fafafa]">
+      <section className="py-12 md:py-20 bg-[#fafafa]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Mobile Filter Toggle */}
+          <div className="lg:hidden mb-6">
+            <button 
+              onClick={() => setShowMobileFilters(!showMobileFilters)}
+              className="w-full flex items-center justify-between px-6 py-4 bg-white rounded-xl border border-gray-200 shadow-sm font-bold text-[#0B2340]"
+            >
+              <div className="flex items-center gap-2">
+                <UilSearch size="18" className="text-teal-500" />
+                <span>Filters & Search</span>
+              </div>
+              <UilAngleDown className={`transition-transform duration-300 ${showMobileFilters ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
+
           <div className="flex flex-col lg:flex-row gap-8">
 
             {/* LEFT SIDEBAR: Filters */}
-            <aside className="lg:w-1/4">
+            <aside className={`lg:w-1/4 ${showMobileFilters ? 'block' : 'hidden lg:block'}`}>
               <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm sticky top-24">
                 <div className="space-y-6">
                   {/* Keywords */}
@@ -186,10 +202,6 @@ export default function JobsPage() {
               <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
                 {/* Header inside list */}
                 <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
-                  <button className="flex items-center gap-2 px-3 py-1.5 border border-gray-300 rounded bg-white text-xs font-bold text-gray-600 hover:bg-gray-50">
-                    <UilAngleDown size="14" />
-                    Filter Jobs
-                  </button>
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">Sort By:</span>
                     <select className="px-2 py-1 border border-gray-300 rounded bg-white text-xs text-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500">
@@ -256,32 +268,6 @@ export default function JobsPage() {
 
             {/* RIGHT SIDEBAR: CTAs */}
             <aside className="lg:w-1/4 space-y-6">
-              {/* Email Subscription */}
-              <div className="bg-[#0B2340] p-8 rounded-xl text-white shadow-lg">
-                <div className="flex items-start gap-3 mb-4">
-                  <UilBell size="24" className="text-blue-400 shrink-0" />
-                  <h4 className="text-lg font-bold">Don&apos;t Miss Out</h4>
-                </div>
-                <p className="text-sm text-gray-300 mb-6 leading-relaxed">
-                  Sign up to be notified of new jobs that match this search.
-                </p>
-                <div className="space-y-4">
-                  <label className="block text-[11px] font-black uppercase tracking-widest text-gray-400">
-                    Enter your Email
-                  </label>
-                  <div className="relative group">
-                    <input
-                      type="email"
-                      placeholder="email"
-                      className="w-full bg-white px-4 py-3 text-gray-900 rounded-md focus:outline-none placeholder:text-gray-300 text-sm"
-                    />
-                    <button className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-[#0B2340] rounded text-white hover:bg-blue-600 transition-colors">
-                      <UilAngleRight size="20" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
               {/* Submit Resume */}
               <div className="bg-[#0B2340]/95 p-8 rounded-xl text-white shadow-lg border border-white/10">
                 <div className="flex items-start gap-3 mb-4">
@@ -291,13 +277,13 @@ export default function JobsPage() {
                 <p className="text-sm text-gray-300 mb-8 leading-relaxed">
                   Send us your resume, and we&apos;ll find the jobs that are the best match for you.
                 </p>
-                <a
-                  href="/contact"
+                <Link
+                  href="/candidates#register"
                   className="block w-full py-4 bg-white text-[#0B2340] text-center text-xs font-black uppercase tracking-widest rounded transition-all hover:bg-blue-50 shadow-md flex items-center justify-center gap-2"
                 >
                   <UilUpload size="16" />
                   Submit Your Resume
-                </a>
+                </Link>
               </div>
             </aside>
 

@@ -41,6 +41,7 @@ export default function ServicesPage() {
         ]}
         image="/images/service-contingent-detail.jpg"
         imagePosition="right"
+        slug="contingent-recruitment"
       />
 
       <ServiceDetail
@@ -63,6 +64,7 @@ export default function ServicesPage() {
         image="/images/service-contract-detail.jpg"
         imagePosition="left"
         dark
+        slug="contract-staffing"
       />
 
       <ServiceDetail
@@ -84,6 +86,7 @@ export default function ServicesPage() {
         ]}
         image="/images/service-direct-detail.jpg"
         imagePosition="right"
+        slug="direct-hire"
       />
 
       <DualCTA />

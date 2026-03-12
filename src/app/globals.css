@@ -101,14 +101,24 @@
   }
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 body {
   font-family: var(--font-sans);
   color: #1a1a1a;
-  overflow-x: hidden;
 }
 
 /* Custom scrollbar */

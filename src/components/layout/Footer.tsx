@@ -18,17 +18,17 @@ const quickLinks = [
 ];
 
 const services = [
-  { label: 'Contingent Recruitment', href: '/services#contingent' },
-  { label: 'Contract Staffing', href: '/services#contract' },
-  { label: 'Direct Hire', href: '/services#direct-hire' },
+  { label: 'Contingent Recruitment', href: '/services/contingent-recruitment' },
+  { label: 'Contract Staffing', href: '/services/contract-staffing' },
+  { label: 'Direct Hire', href: '/services/direct-hire' },
 ];
 
 const industries = [
-  { label: 'Technology', href: '/industries#technology' },
-  { label: 'Healthcare', href: '/industries#healthcare' },
-  { label: 'Finance', href: '/industries#finance' },
-  { label: 'Engineering', href: '/industries#engineering' },
-  { label: 'Business Operations', href: '/industries#business' },
+  { label: 'Technology', href: '/industries/technology' },
+  { label: 'Healthcare', href: '/industries/healthcare' },
+  { label: 'Finance', href: '/industries/finance' },
+  { label: 'Engineering', href: '/industries/engineering' },
+  { label: 'Business Operations', href: '/industries/business-operations' },
 ];
 
 const socialLinks = [

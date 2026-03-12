@@ -21,11 +21,12 @@ export default function CandidatesPage() {
         compact
       />
 
+
+
       <CandidateBenefits />
+      <CandidateForm />
 
       <Testimonials />
-
-      <CandidateForm />
 
       <DualCTA />
     </>

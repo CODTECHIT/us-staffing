@@ -1,0 +1,62 @@
+export const services = [
+  {
+    id: 'contingent-recruitment',
+    title: 'Contingent Recruitment',
+    heroSubtitle: 'Flexible Workforce Solutions',
+    overview: 'Scale your team up or down based on project demands. Our contingent staffing solutions provide the agility you need to respond to market changes while maintaining quality and compliance.',
+    image: '/images/service-contingent-detail.jpg',
+    benefits: [
+      'Rapid scaling of your workforce',
+      'Reduced overhead and administrative burden',
+      'Access to pre-vetted, qualified professionals',
+      'Full compliance and risk management',
+    ],
+    process: [
+      'Assess your staffing requirements and timeline',
+      'Identify and screen qualified candidates',
+      'Deploy professionals to your project',
+      'Provide ongoing support and management',
+    ],
+    details: 'Contingent recruitment is ideal for businesses facing seasonal peaks, special projects, or those who need to maintain a lean permanent staff while still having access to top-tier talent when needed. We handle the heavy lifting—from sourcing and vetting to onboarding and payroll—allowing you to focus on your core business goals.',
+  },
+  {
+    id: 'contract-staffing',
+    title: 'Contract Staffing',
+    heroSubtitle: 'Specialized Professionals On Demand',
+    overview: 'Access top-tier professionals for defined project timelines. Our contract staffing services include full employment management, from payroll to compliance, so you can focus on your core business.',
+    image: '/images/service-contract-detail.jpg',
+    benefits: [
+      'Access specialized skills for specific projects',
+      'No long-term employment commitments',
+      'We handle payroll, benefits, and compliance',
+      'Seamless integration with your existing team',
+    ],
+    process: [
+      'Define project scope and skill requirements',
+      'We identify and present qualified candidates',
+      'Manage contracts, payroll, and compliance',
+      'Ensure successful project delivery',
+    ],
+    details: 'Whether you need a specialized engineer for a six-month transformation project or an interim executive to lead during a transition, our contract staffing solutions provide the right expertise at the right time. We maintain a vast network of vetted contractors ready to hit the ground running.',
+  },
+  {
+    id: 'direct-hire',
+    title: 'Direct Hire',
+    heroSubtitle: 'Permanent Placement Solutions',
+    overview: 'Find and secure top-tier talent for your most critical permanent roles. Our direct hire service combines deep industry knowledge with rigorous screening to deliver candidates who will drive long-term success.',
+    image: '/images/service-direct-detail.jpg',
+    benefits: [
+      'Thorough candidate vetting and assessment',
+      'Deep industry expertise and market knowledge',
+      'Guarantee period for all placements',
+      'Reduced time-to-hire for critical roles',
+    ],
+    process: [
+      'Understand your organizational needs and culture',
+      'Execute targeted search and recruitment',
+      'Present shortlisted, fully vetted candidates',
+      'Support through offer and onboarding',
+    ],
+    details: 'Successful permanent placements require more than just matching a resume to a job description. We focus on cultural alignment, long-term potential, and specific expertise. Our direct hire process is designed to find you the leaders and specialists who will become the cornerstone of your organization.',
+  },
+];

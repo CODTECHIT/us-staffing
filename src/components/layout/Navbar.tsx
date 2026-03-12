@@ -14,20 +14,20 @@ const navLinks = [
     label: 'Services',
     href: '/services',
     dropdown: [
-      { label: 'Contingent Recruitment', href: '/services#contingent' },
-      { label: 'Contract Staffing', href: '/services#contract' },
-      { label: 'Direct Hire', href: '/services#direct-hire' },
+      { label: 'Contingent Recruitment', href: '/services/contingent-recruitment' },
+      { label: 'Contract Staffing', href: '/services/contract-staffing' },
+      { label: 'Direct Hire', href: '/services/direct-hire' },
     ],
   },
   {
     label: 'Industries',
     href: '/industries',
     dropdown: [
-      { label: 'Technology', href: '/industries#technology' },
-      { label: 'Healthcare', href: '/industries#healthcare' },
-      { label: 'Finance', href: '/industries#finance' },
-      { label: 'Engineering', href: '/industries#engineering' },
-      { label: 'Business Operations', href: '/industries#business' },
+      { label: 'Technology', href: '/industries/technology' },
+      { label: 'Healthcare', href: '/industries/healthcare' },
+      { label: 'Finance', href: '/industries/finance' },
+      { label: 'Engineering', href: '/industries/engineering' },
+      { label: 'Business Operations', href: '/industries/business-operations' },
     ],
   },
   { label: 'Employers', href: '/employers' },
@@ -49,13 +49,16 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    setMobileOpen(false);
-    setActiveDropdown(null);
+    const timer = setTimeout(() => {
+      setMobileOpen(false);
+      setActiveDropdown(null);
+    }, 10);
+    return () => clearTimeout(timer);
   }, [pathname]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-[70] transition-all duration-500 ${
         scrolled
           ? 'bg-white shadow-lg py-3'
           : 'bg-transparent py-6'
@@ -65,7 +68,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 no-underline">
-            <div className="text-3xl font-bold tracking-tight transition-colors duration-300">
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight transition-colors duration-300">
               <span className="font-heading" style={{ color: scrolled ? '#0B2340' : '#ffffff' }}>Maxera</span>
               <span className="font-heading" style={{ color: scrolled ? '#0891B2' : '#5eead4' }}> Talent</span>
             </div>
@@ -138,15 +141,17 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
-                scrolled ? 'text-navy-900' : 'text-white'
+              className={`lg:hidden p-3 rounded-xl transition-all duration-300 shadow-lg ${
+                scrolled 
+                  ? 'bg-navy-900 text-white hover:bg-navy-800' 
+                  : 'bg-white text-navy-900 hover:bg-gray-100'
               }`}
               aria-label="Toggle menu"
             >
               {mobileOpen ? (
-                <UilTimes size="26" />
+                <UilTimes size="24" />
               ) : (
-                <UilBars size="26" />
+                <UilBars size="24" />
               )}
             </button>
           </div>

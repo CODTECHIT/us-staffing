@@ -12,6 +12,7 @@ interface IndustryDetailProps {
   image: string;
   imagePosition?: 'left' | 'right';
   dark?: boolean;
+  slug?: string;
 }
 
 export default function IndustryDetail({
@@ -23,6 +24,7 @@ export default function IndustryDetail({
   image,
   imagePosition = 'right',
   dark = false,
+  slug,
 }: IndustryDetailProps) {
   return (
     <section id={id} className={`py-20 ${dark ? 'bg-navy-900' : 'bg-white'}`}>
@@ -64,9 +66,16 @@ export default function IndustryDetail({
                 ))}
               </ul>
 
-              <Button href="/employers" variant={dark ? 'ghost-white' : 'solid'}>
-                Get Staffing Solutions
-              </Button>
+              <div className="flex flex-wrap gap-4">
+                <Button href="/employers" variant={dark ? 'ghost-white' : 'solid'}>
+                  Get Staffing Solutions
+                </Button>
+                {slug && (
+                  <Button href={`/industries/${slug}`} variant="ghost">
+                    View Industry Details
+                  </Button>
+                )}
+              </div>
             </ScrollReveal>
           </div>
 

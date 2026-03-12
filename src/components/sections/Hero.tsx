@@ -44,7 +44,7 @@ export default function Hero({
   showOverlappingCards = false,
 }: HeroProps) {
   return (
-    <section className="relative w-full overflow-visible">
+    <section className="relative w-full overflow-hidden">
       {/* Hero main area — full viewport, content vertically centered */}
       <div
         className="relative w-full flex items-center justify-center"
@@ -70,7 +70,7 @@ export default function Hero({
           <h1
             className="font-heading font-bold text-white leading-tight mb-6"
             style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontSize: 'clamp(1.8rem, 8vw, 4.5rem)',
               textShadow: '0 2px 20px rgba(0,0,0,0.3)',
             }}
           >
@@ -108,7 +108,7 @@ export default function Hero({
 
       {/* ===== OVERLAPPING SERVICE CARDS (vpausa-style) ===== */}
       {showOverlappingCards && (
-        <div className="relative z-20 max-w-6xl mx-auto px-6" style={{ marginTop: '-80px' }}>
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 -mt-10 md:-mt-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {overlappingCards.map((card) => (
               <a
@@ -117,7 +117,7 @@ export default function Hero({
                 className="block relative overflow-hidden group cursor-pointer no-underline"
                 style={{
                   clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)',
-                  height: '380px',
+                  height: '320px',
                   borderRadius: '16px 16px 0 0',
                 }}
               >
@@ -146,7 +146,7 @@ export default function Hero({
                   {card.icon}
                 </div>
                   <h3
-                    className="text-xl lg:text-2xl font-bold text-center leading-snug"
+                    className="text-lg md:text-xl lg:text-2xl font-bold text-center leading-snug"
                     style={{ textShadow: '0 2px 10px rgba(0,0,0,0.4)' }}
                   >
                     {card.title}
@@ -157,29 +157,31 @@ export default function Hero({
           </div>
 
           {/* ===== REFERENCE-STYLE SEARCH BAR ===== */}
-          <div className="mt-16 w-full max-w-6xl mx-auto px-4">
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 py-6 px-10 bg-white/95 backdrop-blur-sm rounded-[2rem] shadow-xl border border-white/50">
+          <div className="mt-12 md:mt-16 w-full max-w-6xl mx-auto px-4">
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 py-8 lg:py-6 px-6 lg:px-10 bg-white/95 backdrop-blur-sm rounded-[1.5rem] lg:rounded-[2rem] shadow-xl border border-white/50">
               
               {/* Label */}
-              <div className="shrink-0">
-                <span className="text-sm font-black uppercase tracking-[0.2em] text-[#0B2340]">
+              <div className="shrink-0 mb-2 lg:mb-0">
+                <span className="text-xs lg:text-sm font-black uppercase tracking-[0.2em] text-[#0B2340]">
                   Search Jobs
                 </span>
               </div>
 
               {/* Title Input */}
-              <div className="w-full lg:w-64">
-                <input
-                  type="text"
-                  placeholder="job title, skills, etc."
-                  className="w-full px-5 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 text-gray-700 placeholder:text-gray-400 text-sm"
-                />
+              <div className="w-full lg:w-72">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="job title, skills, etc."
+                    className="w-full px-5 py-3 border border-gray-200 rounded-lg lg:rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 text-gray-700 placeholder:text-gray-400 text-sm transition-all"
+                  />
+                </div>
               </div>
 
               {/* Location Select (Pill) */}
               <div className="w-full lg:w-48 relative">
                 <select 
-                  className="w-full pl-6 pr-10 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 text-gray-700 text-sm appearance-none bg-white cursor-pointer" 
+                  className="w-full pl-6 pr-10 py-3 border border-gray-200 rounded-lg lg:rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 text-gray-700 text-sm appearance-none bg-white cursor-pointer transition-all" 
                   defaultValue=""
                 >
                   <option value="" disabled>Location</option>
@@ -197,7 +199,7 @@ export default function Hero({
               {/* Industry Select (Pill) */}
               <div className="w-full lg:w-48 relative">
                 <select 
-                  className="w-full pl-6 pr-10 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-1 focus:ring-blue-500 text-gray-700 text-sm appearance-none bg-white cursor-pointer" 
+                  className="w-full pl-6 pr-10 py-3 border border-gray-200 rounded-lg lg:rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 text-gray-700 text-sm appearance-none bg-white cursor-pointer transition-all" 
                   defaultValue=""
                 >
                   <option value="" disabled>Industry</option>
@@ -213,14 +215,17 @@ export default function Hero({
 
               {/* Search Button (Circle) */}
               <button 
-                className="w-12 h-12 rounded-full bg-[#0B2340] hover:bg-blue-600 flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 shrink-0"
+                className="w-full lg:w-12 h-12 rounded-lg lg:rounded-full bg-[#0B2340] hover:bg-teal-600 flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-105 shrink-0 mt-2 lg:mt-0"
+                aria-label="Search"
               >
+                <span className="lg:hidden text-sm font-bold mr-2">Search Now</span>
                 <UilSearch size="20" />
               </button>
             </div>
           </div>
         </div>
       )}
+
     </section>
   );
 }
