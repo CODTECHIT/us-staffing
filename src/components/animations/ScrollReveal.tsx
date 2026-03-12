@@ -14,19 +14,19 @@ interface ScrollRevealProps {
 
 const directionVariants: Record<string, Variants> = {
   up: {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   },
   down: {
-    hidden: { opacity: 0, y: -40 },
+    hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0 },
   },
   left: {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 },
   },
   right: {
-    hidden: { opacity: 0, x: 50 },
+    hidden: { opacity: 0, x: 20 },
     visible: { opacity: 1, x: 0 },
   },
   none: {
@@ -39,7 +39,7 @@ export default function ScrollReveal({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.6,
+  duration = 0.35,
   className = '',
   once = true,
 }: ScrollRevealProps) {

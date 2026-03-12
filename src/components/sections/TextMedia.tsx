@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import Button from '@/components/ui/Button';
 import { UilCheck } from '@iconscout/react-unicons';
@@ -97,11 +98,13 @@ export default function TextMedia({
           {/* Image */}
           <div className="flex-1 w-full">
             <ScrollReveal direction={imagePosition === 'right' ? 'right' : 'left'}>
-              <div className="relative">
-                <div
-                  className="w-full h-[400px] lg:h-[480px] bg-cover bg-center shadow-2xl"
+              <div className="relative h-[400px] lg:h-[480px]">
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className="object-cover object-center shadow-2xl"
                   style={{
-                    backgroundImage: `url(${image})`,
                     borderRadius: '20px',
                     borderBottomLeftRadius: imagePosition === 'right' ? '60px' : '20px',
                     borderBottomRightRadius: imagePosition === 'left' ? '60px' : '20px',

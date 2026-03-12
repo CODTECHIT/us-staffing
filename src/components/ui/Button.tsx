@@ -23,7 +23,7 @@ export default function Button({
   disabled = false,
 }: ButtonProps) {
   const baseStyles =
-    'inline-flex items-center justify-center font-bold rounded-full transition-all duration-300 tracking-wider uppercase cursor-pointer no-underline';
+    'inline-flex items-center justify-center font-bold rounded-full transition-all duration-150 tracking-wider uppercase cursor-pointer no-underline';
 
   const sizeStyles = {
     sm: 'px-6 py-2.5 text-xs',

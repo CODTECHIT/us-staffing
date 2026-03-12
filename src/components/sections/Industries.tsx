@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 import { motion } from 'framer-motion';
@@ -58,32 +59,30 @@ export default function Industries() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {industries.map((industry, index) => (
-            <ScrollReveal key={industry.title} delay={index * 0.1} direction="up">
-              <Link href={industry.href}>
+            <ScrollReveal key={industry.title} delay={index * 0.04} direction="up">
+              <Link href={industry.href} className="no-underline">
                 <motion.div
-                  whileHover={{ scale: 1.04, y: -8 }}
-                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.15 }}
                   className="relative h-72 rounded-2xl overflow-hidden group cursor-pointer shadow-lg"
                 >
-                  {/* Background image */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-115"
-                    style={{ backgroundImage: `url(${industry.image})` }}
+                  <Image
+                    src={industry.image}
+                    alt={industry.title}
+                    fill
+                    className="object-cover object-center transition-transform duration-200 group-hover:scale-105"
                   />
 
-                  {/* Overlay */}
                   <div
-                    className="absolute inset-0"
-                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+                    className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-200"
                   />
 
-                  {/* Content */}
                   <div className="relative z-10 h-full flex flex-col items-center justify-center text-white p-6">
-                    <div className="mb-4 transition-transform duration-300 group-hover:scale-110" style={{ color: '#26C6DA' }}>
+                    <div className="mb-4 transition-transform duration-200 group-hover:scale-110" style={{ color: '#26C6DA' }}>
                       {industry.icon}
                     </div>
                     <h3 className="text-lg font-bold text-center mb-2 drop-shadow-md">{industry.title}</h3>
-                    <p className="text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed" style={{ color: '#C0CAD9' }}>
+                    <p className="text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 leading-relaxed" style={{ color: '#C0CAD9' }}>
                       {industry.description}
                     </p>
                   </div>

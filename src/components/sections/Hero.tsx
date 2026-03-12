@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { UilUsersAlt, UilHardHat, UilFileAlt, UilSearch, UilAngleDown } from '@iconscout/react-unicons';
 
@@ -55,15 +56,17 @@ export default function Hero({
         }}
       >
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        />
-
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src={backgroundImage}
+            alt={title}
+            fill
+            priority
+            className="object-cover object-center"
+            quality={90}
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">

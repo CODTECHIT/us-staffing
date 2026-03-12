@@ -38,10 +38,10 @@
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-  --animate-fade-up: fade-up 0.6s ease-out forwards;
-  --animate-fade-in: fade-in 0.5s ease-out forwards;
-  --animate-slide-left: slide-left 0.6s ease-out forwards;
-  --animate-slide-right: slide-right 0.6s ease-out forwards;
+  --animate-fade-up: fade-up 0.35s ease-out forwards;
+  --animate-fade-in: fade-in 0.3s ease-out forwards;
+  --animate-slide-left: slide-left 0.35s ease-out forwards;
+  --animate-slide-right: slide-right 0.35s ease-out forwards;
   --animate-counter: counter 2s ease-out forwards;
 
   @keyframes fade-up {

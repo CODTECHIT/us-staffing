@@ -12,12 +12,18 @@ export default function HiringPopup() {
   const pathname = usePathname();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      // Only show if we are on the home page
-      if (pathname === '/' && window.scrollY > 300 && !isDismissed) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (pathname === '/' && window.scrollY > 400 && !isDismissed) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -36,12 +42,12 @@ export default function HiringPopup() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ x: -100, y: 100, opacity: 0 }}
-          animate={{ x: 0, y: 0, opacity: 1 }}
-          exit={{ x: -100, y: 100, opacity: 0 }}
-          transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-          className="fixed left-0 top-1/2 -translate-y-1/2 z-50 w-[88%] md:w-[32rem] overflow-hidden rounded-r-[2rem] md:rounded-r-[4rem] shadow-[20px_0_60px_rgba(0,0,0,0.5)] border-y border-r border-white/20"
-          style={{ height: '280px' }}
+          initial={{ x: '-100%', opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: '-100%', opacity: 0 }}
+          transition={{ duration: 0.1, ease: 'linear' }}
+          className="fixed left-0 top-[20%] md:top-[30%] z-50 w-[92%] md:w-[28rem] overflow-hidden rounded-r-[1.5rem] md:rounded-r-[2rem] shadow-[20px_0_60px_rgba(0,0,0,0.5)] border-y border-r border-white/20"
+          style={{ height: '220px' }}
         >
           {/* Background Image */}
           <div

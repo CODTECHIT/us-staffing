@@ -42,11 +42,11 @@ export default function MobileBottomNav() {
             <Link
               key={item.label}
               href={item.href}
-              className={`flex flex-col items-center justify-center gap-1.5 transition-all duration-300 no-underline border-r border-white/5 last:border-r-0 ${
+              className={`flex flex-col items-center justify-center gap-1.5 transition-all duration-150 no-underline border-r border-white/5 last:border-r-0 ${
                 isActive ? 'bg-teal-600/20 text-teal-400' : 'text-white hover:bg-white/5'
               }`}
             >
-              <div className={`${isActive ? 'scale-110' : 'scale-100'} transition-transform duration-300`}>
+              <div className={`${isActive ? 'scale-110' : 'scale-100'} transition-transform duration-150`}>
                 {item.icon}
               </div>
               <span className="text-[9px] font-black uppercase tracking-wider text-center px-1 leading-tight">

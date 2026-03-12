@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 import Button from '@/components/ui/Button';
 
@@ -8,13 +9,14 @@ export default function DualCTA() {
     <section className="grid grid-cols-1 md:grid-cols-2">
       {/* Employers */}
       <ScrollReveal direction="left" className="relative min-h-[400px] flex items-center justify-center overflow-hidden group">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          style={{ backgroundImage: 'url(/images/dual-cta-employers.jpg)' }}
+        <Image
+          src="/images/dual-cta-employers.jpg"
+          alt="Build Your Team"
+          fill
+          className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
         />
         <div
-          className="absolute inset-0"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
+          className="absolute inset-0 bg-black/40"
         />
         <div className="relative z-10 text-center px-10 py-12">
           <h3 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
@@ -31,13 +33,14 @@ export default function DualCTA() {
 
       {/* Candidates */}
       <ScrollReveal direction="right" className="relative min-h-[400px] flex items-center justify-center overflow-hidden group">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          style={{ backgroundImage: 'url(/images/dual-cta-candidates.jpg)' }}
+        <Image
+          src="/images/dual-cta-candidates.jpg"
+          alt="Find Your Next Job"
+          fill
+          className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
         />
         <div
-          className="absolute inset-0"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
+          className="absolute inset-0 bg-black/40"
         />
         <div className="relative z-10 text-center px-10 py-12">
           <h3 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
