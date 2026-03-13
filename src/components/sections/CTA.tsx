@@ -19,7 +19,7 @@ export default function CTA({
   ctaHref = '/contact',
 }: CTAProps) {
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-12 overflow-hidden">
       {/* Parallax background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"

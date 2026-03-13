@@ -41,7 +41,7 @@ interface ServicesProps {
 export default function Services({ overlapping = false }: ServicesProps) {
   return (
     <section
-      className={`relative ${overlapping ? '-mt-16 z-20 pb-20' : 'py-24'}`}
+      className={`relative ${overlapping ? 'mt-0 z-20 pb-8' : 'py-12'}`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         {!overlapping && (

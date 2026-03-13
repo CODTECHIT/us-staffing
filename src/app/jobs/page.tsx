@@ -102,7 +102,7 @@ export default function JobsPage() {
         compact
       />
 
-      <section className="py-12 md:py-20 bg-[#fafafa]">
+      <section className="py-8 md:py-12 bg-[#fafafa]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Mobile Filter Toggle */}
@@ -142,12 +142,12 @@ export default function JobsPage() {
                   {/* Location */}
                   <div>
                     <label className="block text-[11px] font-black uppercase tracking-widest text-gray-500 mb-2">
-                      Location
+                      Location (USA Only)
                     </label>
                     <div className="relative">
                       <input
                         type="text"
-                        placeholder="Enter city or zip code"
+                        placeholder="City, State or Zip"
                         className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-sm text-center transition-all"
                         value={locationFilter === 'All Locations' ? '' : locationFilter}
                         onChange={(e) => setLocationFilter(e.target.value || 'All Locations')}

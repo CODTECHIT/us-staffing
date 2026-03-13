@@ -30,14 +30,13 @@ export default function TextMedia({
 }: TextMediaProps) {
   return (
     <section
-      className="py-24"
+      className="py-12"
       style={dark ? { backgroundColor: '#0B2340' } : { backgroundColor: '#ffffff' }}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div
-          className={`flex flex-col lg:flex-row items-center gap-14 lg:gap-20 ${
-            imagePosition === 'left' ? 'lg:flex-row-reverse' : ''
-          }`}
+          className={`flex flex-col lg:flex-row items-center gap-14 lg:gap-20 ${imagePosition === 'left' ? 'lg:flex-row-reverse' : ''
+            }`}
         >
           {/* Text */}
           <div className="flex-1">
@@ -112,9 +111,8 @@ export default function TextMedia({
                 />
                 {/* Decorative accent */}
                 <div
-                  className={`absolute -bottom-4 ${
-                    imagePosition === 'right' ? '-right-4' : '-left-4'
-                  } w-28 h-28 rounded-2xl -z-10`}
+                  className={`absolute bottom-4 ${imagePosition === 'right' ? 'right-4' : 'left-4'
+                    } w-28 h-28 rounded-2xl -z-10`}
                   style={{ backgroundColor: 'rgba(8, 145, 178, 0.15)' }}
                 />
               </div>

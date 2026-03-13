@@ -21,7 +21,7 @@ export default function ContingentRecruitmentPage() {
         compact
       />
 
-      <section className="py-24 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
             {/* Primary Content */}
@@ -68,13 +68,13 @@ export default function ContingentRecruitmentPage() {
             <aside className="lg:w-1/3 w-full sticky top-32">
               <ScrollReveal direction="right">
                 <div className="bg-navy-900 rounded-3xl p-8 text-white shadow-2xl overflow-hidden relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-                  
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full mr-0 mt-0 blur-3xl"></div>
+
                   <h3 className="text-xl font-bold mb-8 flex items-center gap-3">
                     <span className="w-8 h-1 bg-teal-500 rounded-full"></span>
                     Key Benefits
                   </h3>
-                  
+
                   <ul className="space-y-6 mb-10">
                     {[
                       'Rapid scaling of your workforce',
@@ -107,8 +107,8 @@ export default function ContingentRecruitmentPage() {
                       { title: 'Contract Staffing', href: '/services/contract-staffing' },
                       { title: 'Direct Hire', href: '/services/direct-hire' }
                     ].map(s => (
-                      <a 
-                        key={s.href} 
+                      <a
+                        key={s.href}
                         href={s.href}
                         className="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-teal-500 hover:bg-teal-50/30 transition-all group no-underline"
                       >

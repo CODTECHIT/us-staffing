@@ -37,7 +37,7 @@ export default function AboutPage() {
       <CoreValues />
 
       {/* Leadership */}
-      <section className="py-20 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-500 mb-3">Our Leadership</p>

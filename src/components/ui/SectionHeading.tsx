@@ -17,7 +17,7 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div
-      className={`max-w-3xl ${align === 'center' ? 'mx-auto text-center' : 'text-left'} mb-14 ${className}`}
+      className={`max-w-3xl ${align === 'center' ? 'mx-auto text-center' : 'text-left'} mb-8 ${className}`}
     >
       {subtitle && (
         <p

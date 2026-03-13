@@ -46,7 +46,7 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-20 pb-10">
         {/* Logo centered */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <Link href="/" className="inline-block no-underline">
             <div className="text-4xl font-bold tracking-tight">
               <span className="font-heading text-white">Maxera</span>
@@ -59,7 +59,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
           {/* Contact Info */}
           <div>
             <h3

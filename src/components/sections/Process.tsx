@@ -34,7 +34,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-24" style={{ backgroundColor: '#ffffff' }}>
+    <section className="py-12" style={{ backgroundColor: '#ffffff' }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <ScrollReveal>
           <SectionHeading

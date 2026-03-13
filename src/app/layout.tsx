@@ -6,6 +6,15 @@ import Footer from "@/components/layout/Footer";
 import HiringPopup from "@/components/ui/HiringPopup";
 import MobileBottomNav from "@/components/layout/MobileBottomNav";
 
+// Service Worker Registration
+if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch((error) => {
+      console.log('Service Worker registration failed:', error);
+    });
+  });
+}
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",

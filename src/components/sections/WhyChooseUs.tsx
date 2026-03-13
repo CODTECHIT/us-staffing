@@ -30,7 +30,7 @@ const benefits = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24" style={{ backgroundColor: '#f9fafb' }}>
+    <section className="py-12" style={{ backgroundColor: '#f9fafb' }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <ScrollReveal>
           <SectionHeading

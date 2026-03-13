@@ -18,7 +18,7 @@ export default function DualCTA() {
         <div
           className="absolute inset-0 bg-black/40"
         />
-        <div className="relative z-10 text-center px-10 py-12">
+        <div className="relative z-10 text-center px-10 py-8">
           <h3 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
             Build Your Team
           </h3>
@@ -42,7 +42,7 @@ export default function DualCTA() {
         <div
           className="absolute inset-0 bg-black/40"
         />
-        <div className="relative z-10 text-center px-10 py-12">
+        <div className="relative z-10 text-center px-10 py-8">
           <h3 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
             Find Your Next Job
           </h3>

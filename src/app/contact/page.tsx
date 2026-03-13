@@ -17,7 +17,7 @@ export default function ContactPage() {
         compact
       />
 
-      <section className="py-20 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <h2 className="text-3xl font-bold text-navy-900 mb-4">Get in Touch</h2>

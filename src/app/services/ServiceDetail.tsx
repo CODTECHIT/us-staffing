@@ -29,7 +29,7 @@ export default function ServiceDetail({
   slug,
 }: ServiceDetailProps) {
   return (
-    <section id={id} className={`py-20 ${dark ? 'bg-navy-900' : 'bg-white'}`}>
+    <section id={id} className={`py-8 ${dark ? 'bg-navy-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`flex flex-col lg:flex-row items-start gap-12 lg:gap-16 ${

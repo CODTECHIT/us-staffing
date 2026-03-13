@@ -21,13 +21,13 @@ export default function HealthcareIndustryPage() {
         compact
       />
 
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
             {/* Primary Content */}
             <div className="lg:w-2/3">
               <ScrollReveal direction="left">
-                <div className="mb-14">
+                <div className="mb-10">
                   <span className="text-teal-600 font-bold uppercase tracking-widest text-xs mb-4 inline-block">Industry Focus</span>
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 mb-8 font-heading leading-tight">
                     Powering Progress in <span className="text-teal-500 whitespace-nowrap">Healthcare</span>
@@ -41,7 +41,7 @@ export default function HealthcareIndustryPage() {
                 </div>
 
                 {/* Challenges Section */}
-                <div className="mb-16">
+                <div className="mb-12">
                   <h3 className="text-2xl font-bold text-navy-900 mb-8 flex items-center gap-3">
                     <UilCheckCircle size="28" className="text-amber-500" />
                     Key Challenges
@@ -65,13 +65,13 @@ export default function HealthcareIndustryPage() {
 
                 {/* Solutions Section */}
                 <div className="p-10 rounded-[3rem] bg-navy-900 text-white shadow-2xl relative overflow-hidden">
-                  <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl"></div>
-                   
+                  <div className="absolute bottom-0 right-0 w-64 h-64 bg-teal-500/20 rounded-full blur-3xl"></div>
+
                   <h3 className="text-2xl font-bold mb-10 flex items-center gap-3">
                     <UilCheckCircle size="28" className="text-teal-400" />
                     How We Help
                   </h3>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
                     {[
                       'Extensive vetting and credentialing verification',
@@ -99,7 +99,7 @@ export default function HealthcareIndustryPage() {
                   <p className="text-gray-500 text-sm leading-relaxed mb-8">
                     We don&apos;t just recruit; we partner. Our deep understanding of Healthcare enables us to identify the specialized talent that others miss.
                   </p>
-                  
+
                   <div className="space-y-4 mb-10">
                     <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-gray-100">
                       <div className="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-600 font-bold">98%</div>
@@ -126,8 +126,8 @@ export default function HealthcareIndustryPage() {
                       { title: 'Engineering', href: '/industries/engineering' },
                       { title: 'Business Operations', href: '/industries/business-operations' }
                     ].map(i => (
-                      <a 
-                        key={i.href} 
+                      <a
+                        key={i.href}
                         href={i.href}
                         className="flex items-center justify-between px-6 py-4 rounded-full hover:bg-white hover:shadow-md hover:border-teal-500 border border-transparent transition-all group no-underline"
                       >
