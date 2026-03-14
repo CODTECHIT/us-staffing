@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { type ReactNode } from 'react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { type ReactNode } from "react";
 
 interface CardProps {
   title: string;
@@ -21,7 +21,7 @@ export default function Card({
   icon,
   image,
   overlay = false,
-  className = '',
+  className = "",
   clipPath = false,
 }: CardProps) {
   return (
@@ -31,16 +31,17 @@ export default function Card({
       className={`relative overflow-hidden rounded-2xl group cursor-pointer ${className}`}
     >
       {image && (
-        <div className={`relative w-full h-full ${clipPath ? 'clip-v-shape' : ''}`}>
+        <div
+          className={`relative w-full h-full ${clipPath ? "clip-v-shape" : ""}`}
+        >
           <Image
             src={image}
             alt={title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
             className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          {overlay && (
-            <div className="absolute inset-0 bg-transparent" />
-          )}
+          {overlay && <div className="absolute inset-0 bg-transparent" />}
         </div>
       )}
 
@@ -60,9 +61,7 @@ export default function Card({
 
       {image && overlay && (
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-6">
-          {icon && (
-            <div className="w-12 h-12 mb-3 text-amber-400">{icon}</div>
-          )}
+          {icon && <div className="w-12 h-12 mb-3 text-amber-400">{icon}</div>}
           <h3 className="text-xl font-bold text-center">{title}</h3>
           {description && (
             <p className="text-sm text-gray-200 text-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

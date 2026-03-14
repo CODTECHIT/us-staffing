@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Button from '@/components/ui/Button';
-import { UilUsersAlt, UilHardHat, UilFileAlt, UilSearch, UilAngleDown } from '@iconscout/react-unicons';
+import React from "react";
+import Image from "next/image";
+import Button from "@/components/ui/Button";
+import {
+  UilUsersAlt,
+  UilHardHat,
+  UilFileAlt,
+  UilSearch,
+  UilAngleDown,
+} from "@iconscout/react-unicons";
 
 interface HeroProps {
   title: string;
@@ -17,43 +23,45 @@ interface HeroProps {
 
 const overlappingCards = [
   {
-    title: 'Contingent Recruitment',
-    image: '/images/service-contingent.jpg',
+    title: "Contingent Recruitment",
+    image: "/images/service-contingent.jpg",
     icon: <UilUsersAlt size="64" />,
-    href: '/services#contingent',
+    href: "/services#contingent",
   },
   {
-    title: 'Contract Staffing',
-    image: '/images/service-contract.jpg',
+    title: "Contract Staffing",
+    image: "/images/service-contract.jpg",
     icon: <UilHardHat size="64" />,
-    href: '/services#contract',
+    href: "/services#contract",
   },
   {
-    title: 'Direct Hire',
-    image: '/images/service-direct.jpg',
+    title: "Direct Hire",
+    image: "/images/service-direct.jpg",
     icon: <UilFileAlt size="64" />,
-    href: '/services#direct-hire',
+    href: "/services#direct-hire",
   },
 ];
 
 export default function Hero({
   title,
   subtitle,
-  backgroundImage = '/images/hero.jpeg',
+  backgroundImage = "/images/hero.jpeg",
   cta1,
   cta2,
   compact = false,
   showOverlappingCards = false,
 }: HeroProps) {
   return (
-    <section className="relative w-full overflow-hidden pb-20">
+    <section
+      className={`relative w-full overflow-hidden ${compact ? "pb-8" : "pb-20"}`}
+    >
       {/* Hero main area — full viewport, content vertically centered */}
       <div
         className="relative w-full flex items-center justify-center"
         style={{
-          minHeight: compact ? '55vh' : '89vh',
-          paddingTop: compact ? '96px' : '0',
-          paddingBottom: compact ? '64px' : '0',
+          minHeight: compact ? "55vh" : "89vh",
+          paddingTop: compact ? "96px" : "0",
+          paddingBottom: compact ? "64px" : "0",
         }}
       >
         {/* Background Image */}
@@ -65,6 +73,7 @@ export default function Hero({
             priority
             className="object-cover object-center"
             quality={75}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -74,8 +83,8 @@ export default function Hero({
           <h1
             className="font-heading font-bold text-white leading-tight mb-6"
             style={{
-              fontSize: 'clamp(1.8rem, 8vw, 4.5rem)',
-              textShadow: '0 2px 20px rgba(0,0,0,0.3)',
+              fontSize: "clamp(1.8rem, 8vw, 4.5rem)",
+              textShadow: "0 2px 20px rgba(0,0,0,0.3)",
             }}
           >
             {title}
@@ -85,8 +94,8 @@ export default function Hero({
             <p
               className="max-w-2xl mx-auto mb-10 leading-relaxed"
               style={{
-                fontSize: 'clamp(1rem, 1.5vw, 1.25rem)',
-                color: 'rgba(255,255,255,0.9)',
+                fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
+                color: "rgba(255,255,255,0.9)",
               }}
             >
               {subtitle}
@@ -120,9 +129,9 @@ export default function Hero({
                 href={card.href}
                 className="block relative overflow-hidden group cursor-pointer no-underline shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(8,145,178,0.25)]"
                 style={{
-                  clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)',
-                  height: '420px',
-                  borderRadius: '32px 32px 0 0',
+                  clipPath: "polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)",
+                  height: "420px",
+                  borderRadius: "32px 32px 0 0",
                 }}
               >
                 {/* Card BG image */}
@@ -133,11 +142,11 @@ export default function Hero({
 
                 <div
                   className="absolute inset-0"
-                  style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}
+                  style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}
                 />
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+                  style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
                 />
 
                 {/* Card Content — centered icon + title */}
@@ -145,13 +154,16 @@ export default function Hero({
                   {/* Unicon icon */}
                   <div
                     className="mb-8 transition-transform duration-500 group-hover:scale-110"
-                    style={{ color: '#26C6DA', filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.4))' }}
+                    style={{
+                      color: "#26C6DA",
+                      filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.4))",
+                    }}
                   >
                     {card.icon}
                   </div>
                   <h3
                     className="text-2xl md:text-3xl font-bold text-center leading-tight px-4"
-                    style={{ textShadow: '0 4px 15px rgba(0,0,0,0.6)' }}
+                    style={{ textShadow: "0 4px 15px rgba(0,0,0,0.6)" }}
                   >
                     {card.title}
                   </h3>
@@ -163,7 +175,6 @@ export default function Hero({
           {/* ===== REFERENCE-STYLE SEARCH BAR ===== */}
           <div className="mt-16 md:mt-24 w-full max-w-6xl mx-auto px-4">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 py-10 lg:py-8 px-6 lg:px-12 bg-white/95 backdrop-blur-md rounded-[2rem] lg:rounded-[3rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-white/60">
-
               {/* Label */}
               <div className="shrink-0 mb-2 lg:mb-0">
                 <span className="text-xs lg:text-sm font-black uppercase tracking-[0.2em] text-[#0B2340]">
@@ -188,7 +199,9 @@ export default function Hero({
                   className="w-full pl-6 pr-10 py-3 border border-gray-200 rounded-lg lg:rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 text-gray-700 text-sm appearance-none bg-white cursor-pointer transition-all"
                   defaultValue=""
                 >
-                  <option value="" disabled>United States</option>
+                  <option value="" disabled>
+                    United States
+                  </option>
                   <option value="Remote">Remote (USA)</option>
                   <option value="SF">San Francisco, CA</option>
                   <option value="NY">New York, NY</option>
@@ -208,7 +221,9 @@ export default function Hero({
                   className="w-full pl-6 pr-10 py-3 border border-gray-200 rounded-lg lg:rounded-full focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 text-gray-700 text-sm appearance-none bg-white cursor-pointer transition-all"
                   defaultValue=""
                 >
-                  <option value="" disabled>Industry</option>
+                  <option value="" disabled>
+                    Industry
+                  </option>
                   <option>Technology</option>
                   <option>Healthcare</option>
                   <option>Finance</option>
@@ -224,14 +239,15 @@ export default function Hero({
                 className="w-full lg:w-12 h-12 rounded-lg lg:rounded-full bg-[#0B2340] hover:bg-teal-600 flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-105 shrink-0 mt-2 lg:mt-0"
                 aria-label="Search"
               >
-                <span className="lg:hidden text-sm font-bold mr-2">Search Now</span>
+                <span className="lg:hidden text-sm font-bold mr-2">
+                  Search Now
+                </span>
                 <UilSearch size="20" />
               </button>
             </div>
           </div>
         </div>
       )}
-
     </section>
   );
 }

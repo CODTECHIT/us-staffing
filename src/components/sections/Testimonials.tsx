@@ -1,40 +1,40 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import ScrollReveal from '@/components/animations/ScrollReveal';
-import SectionHeading from '@/components/ui/SectionHeading';
-import UilAngleLeft from '@iconscout/react-unicons/icons/uil-angle-left';
-import UilAngleRight from '@iconscout/react-unicons/icons/uil-angle-right';
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import SectionHeading from "@/components/ui/SectionHeading";
+import UilAngleLeft from "@iconscout/react-unicons/icons/uil-angle-left";
+import UilAngleRight from "@iconscout/react-unicons/icons/uil-angle-right";
 
 const testimonials = [
   {
     quote:
-      'Maxera Talent transformed our hiring process. They delivered highly qualified candidates within days, not weeks. Their understanding of our industry was exceptional.',
-    name: 'Sarah Mitchell',
-    title: 'VP of Operations',
-    company: 'TechForward Inc.',
+      "Maxera Talent transformed our hiring process. They delivered highly qualified candidates within days, not weeks. Their understanding of our industry was exceptional.",
+    name: "Sarah Mitchell",
+    title: "VP of Operations",
+    company: "TechForward Inc.",
   },
   {
     quote:
-      'Working with Maxera Talent was a game-changer for our growth. They found us exceptional engineering talent that integrated seamlessly with our existing team.',
-    name: 'James Rodriguez',
-    title: 'CTO',
-    company: 'Innovate Solutions',
+      "Working with Maxera Talent was a game-changer for our growth. They found us exceptional engineering talent that integrated seamlessly with our existing team.",
+    name: "James Rodriguez",
+    title: "CTO",
+    company: "Innovate Solutions",
   },
   {
     quote:
-      'The professionalism and responsiveness of the Maxera team is unmatched. They truly care about making the right match for both the candidate and the employer.',
-    name: 'Emily Chen',
-    title: 'HR Director',
-    company: 'Global Health Systems',
+      "The professionalism and responsiveness of the Maxera team is unmatched. They truly care about making the right match for both the candidate and the employer.",
+    name: "Emily Chen",
+    title: "HR Director",
+    company: "Global Health Systems",
   },
   {
     quote:
-      'We needed specialized finance professionals on a tight timeline. Maxera delivered four qualified candidates in under a week. Highly recommended.',
-    name: 'Michael Thompson',
-    title: 'CFO',
-    company: 'CapitalBridge Partners',
+      "We needed specialized finance professionals on a tight timeline. Maxera delivered four qualified candidates in under a week. Highly recommended.",
+    name: "Michael Thompson",
+    title: "CFO",
+    company: "CapitalBridge Partners",
   },
 ];
 
@@ -46,7 +46,9 @@ export default function Testimonials() {
   }, []);
 
   const prev = () => {
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrent(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
   };
 
   useEffect(() => {
@@ -55,8 +57,11 @@ export default function Testimonials() {
   }, [next]);
 
   return (
-    <section className="py-12" style={{ backgroundColor: '#ffffff' }}>
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-10">
+    <section
+      className="py-[5vh] sm:py-16 md:py-20"
+      style={{ backgroundColor: "#ffffff" }}
+    >
+      <div className="max-w-5xl mx-auto px-4 sm:px-8 lg:px-10">
         <ScrollReveal>
           <SectionHeading
             subtitle="Testimonials"
@@ -77,18 +82,30 @@ export default function Testimonials() {
                 className="text-center max-w-3xl mx-auto"
               >
                 {/* Quote marks */}
-                <div className="text-7xl leading-none mb-6 font-heading" style={{ color: '#80DEEA' }}>&ldquo;</div>
+                <div
+                  className="text-7xl leading-none mb-6 font-heading"
+                  style={{ color: "#80DEEA" }}
+                >
+                  &ldquo;
+                </div>
 
-                <p className="text-lg md:text-xl leading-relaxed italic mb-8" style={{ color: '#374151' }}>
+                <p
+                  className="text-lg md:text-xl leading-relaxed italic mb-8"
+                  style={{ color: "#374151" }}
+                >
                   {testimonials[current].quote}
                 </p>
 
                 <div>
-                  <p className="text-base font-bold" style={{ color: '#0B2340' }}>
+                  <p
+                    className="text-base font-bold"
+                    style={{ color: "#0B2340" }}
+                  >
                     {testimonials[current].name}
                   </p>
-                  <p className="text-sm" style={{ color: '#6b7280' }}>
-                    {testimonials[current].title}, {testimonials[current].company}
+                  <p className="text-sm" style={{ color: "#6b7280" }}>
+                    {testimonials[current].title},{" "}
+                    {testimonials[current].company}
                   </p>
                 </div>
               </motion.div>
@@ -101,8 +118,8 @@ export default function Testimonials() {
               onClick={prev}
               className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
               style={{
-                border: '2px solid #C0CAD9',
-                color: '#0B2340',
+                border: "2px solid #C0CAD9",
+                color: "#0B2340",
               }}
               aria-label="Previous testimonial"
             >
@@ -117,9 +134,9 @@ export default function Testimonials() {
                   onClick={() => setCurrent(index)}
                   className="rounded-full transition-all duration-300 cursor-pointer"
                   style={{
-                    width: index === current ? '28px' : '10px',
-                    height: '10px',
-                    backgroundColor: index === current ? '#0891B2' : '#d1d5db',
+                    width: index === current ? "28px" : "10px",
+                    height: "10px",
+                    backgroundColor: index === current ? "#0891B2" : "#d1d5db",
                   }}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -130,8 +147,8 @@ export default function Testimonials() {
               onClick={next}
               className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer"
               style={{
-                border: '2px solid #C0CAD9',
-                color: '#0B2340',
+                border: "2px solid #C0CAD9",
+                color: "#0B2340",
               }}
               aria-label="Next testimonial"
             >
