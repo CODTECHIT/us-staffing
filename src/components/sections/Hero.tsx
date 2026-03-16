@@ -59,9 +59,9 @@ export default function Hero({
       <div
         className="relative w-full flex items-center justify-center"
         style={{
-          minHeight: compact ? "55vh" : "89vh",
-          paddingTop: compact ? "96px" : "0",
-          paddingBottom: compact ? "64px" : "0",
+          minHeight: compact ? "55vh" : "max(600px, 85vh)",
+          paddingTop: compact ? "96px" : "80px",
+          paddingBottom: showOverlappingCards ? "120px" : (compact ? "64px" : "40px"),
         }}
       >
         {/* Background Image */}
@@ -121,7 +121,7 @@ export default function Hero({
 
       {/* ===== OVERLAPPING SERVICE CARDS (vpausa-style) ===== */}
       {showOverlappingCards && (
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 mt-[-160px]">
+        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 mt-[-80px] md:mt-[-160px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {overlappingCards.map((card) => (
               <a
@@ -130,7 +130,7 @@ export default function Hero({
                 className="block relative overflow-hidden group cursor-pointer no-underline shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_rgba(8,145,178,0.25)]"
                 style={{
                   clipPath: "polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)",
-                  height: "420px",
+                  height: "clamp(320px, 45vh, 420px)",
                   borderRadius: "32px 32px 0 0",
                 }}
               >
