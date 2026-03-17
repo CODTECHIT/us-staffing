@@ -58,10 +58,10 @@ export default function Testimonials() {
 
   return (
     <section
-      className="py-[5vh] sm:py-16 md:py-20"
+      className="py-20 md:py-24"
       style={{ backgroundColor: "#ffffff" }}
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-8 lg:px-10">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         <ScrollReveal>
           <SectionHeading
             subtitle="Testimonials"

@@ -62,7 +62,7 @@ export default function Industries() {
       className="py-[5vh] sm:py-16 md:py-20"
       style={{ backgroundColor: "#f9fafb" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <ScrollReveal>
           <SectionHeading
             subtitle="Industries We Serve"
@@ -71,7 +71,7 @@ export default function Industries() {
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 lg:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
           {industries.map((industry, index) => (
             <ScrollReveal
               key={industry.title}
@@ -82,7 +82,7 @@ export default function Industries() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.15 }}
-                  className="relative h-56 sm:h-72 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-lg"
+                  className="relative h-64 sm:h-72 md:h-80 rounded-2xl overflow-hidden group cursor-pointer shadow-lg"
                 >
                   <Image
                     src={industry.image}

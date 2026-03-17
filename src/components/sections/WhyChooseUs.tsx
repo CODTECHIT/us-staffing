@@ -30,8 +30,8 @@ const benefits = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-12" style={{ backgroundColor: '#f9fafb' }}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+    <section className="py-20 md:py-24" style={{ backgroundColor: '#f9fafb' }}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <ScrollReveal>
           <SectionHeading
             subtitle="Why Choose Maxera Talent?"
@@ -39,10 +39,10 @@ export default function WhyChooseUs() {
           />
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <ScrollReveal key={benefit.title} delay={index * 0.1} direction="up">
-              <div className="text-center group p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="text-center group p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col items-center">
                 <div
                   className="w-20 h-20 mx-auto mb-6 rounded-full border-2 flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                   style={{

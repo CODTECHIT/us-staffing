@@ -46,10 +46,10 @@ const steps = [
 export default function Process() {
   return (
     <section
-      className="py-[5vh] sm:py-16 md:py-20"
+      className="py-20 md:py-24"
       style={{ backgroundColor: "#ffffff" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <ScrollReveal>
           <SectionHeading
             subtitle="Our Process"
@@ -72,7 +72,7 @@ export default function Process() {
             }}
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
             {steps.map((step, index) => (
               <ScrollReveal
                 key={step.title}
@@ -98,7 +98,7 @@ export default function Process() {
                       backgroundColor: "#F59E0B",
                       top: "-4px",
                       left: "50%",
-                      marginLeft: "16px",
+                      transform: "translateX(12px)",
                     }}
                   >
                     {index + 1}

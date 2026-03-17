@@ -44,7 +44,7 @@ export default function Footer() {
       <div className="absolute inset-0 gear-pattern opacity-40" />
 
       {/* Main Footer */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-20 pb-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 pb-12">
         {/* Logo centered */}
         <div className="text-center mb-10">
           <Link href="/" className="inline-block no-underline">
@@ -53,13 +53,13 @@ export default function Footer() {
               <span className="font-heading" style={{ color: '#26C6DA' }}> Talent</span>
             </div>
           </Link>
-          <p className="mt-4 text-sm max-w-md mx-auto" style={{ color: '#96A8C0' }}>
+          <p className="mt-4 text-sm max-w-md mx-auto mb-12" style={{ color: '#96A8C0' }}>
             Connecting exceptional talent with industry-leading companies across the United States.
           </p>
         </div>
 
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-10 items-start">
           {/* Contact Info */}
           <div>
             <h3

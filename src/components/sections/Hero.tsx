@@ -121,8 +121,8 @@ export default function Hero({
 
       {/* ===== OVERLAPPING SERVICE CARDS (vpausa-style) ===== */}
       {showOverlappingCards && (
-        <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 mt-[-80px] md:mt-[-160px]">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-[-80px] md:mt-[-160px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
             {overlappingCards.map((card) => (
               <a
                 key={card.title}
@@ -173,7 +173,7 @@ export default function Hero({
           </div>
 
           {/* ===== REFERENCE-STYLE SEARCH BAR ===== */}
-          <div className="mt-16 md:mt-24 w-full max-w-6xl mx-auto px-4">
+          <div className="mt-16 md:mt-24 w-full">
             <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 py-10 lg:py-8 px-6 lg:px-12 bg-white/95 backdrop-blur-md rounded-[2rem] lg:rounded-[3rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-white/60">
               {/* Label */}
               <div className="shrink-0 mb-2 lg:mb-0">

@@ -253,7 +253,81 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-/* ===== SECTION SPACING ===== */
+/* ===== DESIGN SYSTEM — SPACING SCALE ===== */
+
+/* Unified section vertical rhythm */
+.section-spacing {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Unified container: max-width + horizontal padding */
+.container-standard {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container-standard {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-standard {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Unified image card heights (for Industries / Services style cards) */
+.card-image {
+  height: 16rem;
+}
+
+@media (min-width: 640px) {
+  .card-image {
+    height: 18rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-image {
+    height: 20rem;
+  }
+}
+
+/* Unified card grid gap */
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* ===== SECTION BASELINE ===== */
 section {
   position: relative;
+  overflow-x: hidden;
 }
